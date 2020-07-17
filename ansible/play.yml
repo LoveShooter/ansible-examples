@@ -1,0 +1,11 @@
+hosts: servers
+become:
+  true
+become_method:
+  sudo
+become_user:
+  root
+remote_user:
+  maxxx_aka_subfocus
+roles:
+  -nginx
