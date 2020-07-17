@@ -1,8 +1,9 @@
-name: Install Nginx on Ubuntu Servers
-apt:
-  name=nginx
-  state=latest
-when:
-  ansible_os_family == "Debian"
-notify:
-  - nginx systemd
+---
+- name: Install Nginx on Ubuntu Servers
+  apt:
+    name=nginx
+    state=latest
+  when:
+    ansible_os_family == "Debian"
+  notify:
+    - nginx systemd
