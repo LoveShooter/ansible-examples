@@ -1,0 +1,8 @@
+---
+- name: NGINX
+  hosts: testservers
+  become: yes
+
+  tasks:
+  - name: install NGINX webserver
+    apt: name=nginx state=latest

@@ -1,0 +1,8 @@
+---
+- name: MC
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install Midnight Commander
+    apt: name=mc state=latest
