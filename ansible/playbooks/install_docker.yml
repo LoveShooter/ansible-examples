@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:    
+    - name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install repository key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+    
+    - name: Add the Docker repository to APT source
+      apt_repository: repo='deb https://download.docker.com/linux/ubuntu focal stable' state=present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
