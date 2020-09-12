@@ -11,4 +11,4 @@
   #Apache, maria-mysql, php install
   - name: 
     apt: name={{ item }} update_cache=yes state=latest
-    loop: [ 'apache2', 'mariadb', 'php', 'php-mysql']
+    loop: [ 'apache2', 'mariadb-server', 'php', 'php-mysql']
