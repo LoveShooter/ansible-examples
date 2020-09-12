@@ -4,11 +4,11 @@
   become: yes
 
   tasks:
-  - name: Intalling LAMP on multiple nodes
+  - name: Update server
     apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
     loop: [ 'aptitude' ]
 
   #Apache, maria-mysql, php install
-  - name: 
+  - name: Intalling LAMP on multiple nodes
     apt: name={{ item }} update_cache=yes state=latest
     loop: [ 'apache2', 'mariadb-server', 'php', 'php-mysql', 'libapache2-mod-php']
