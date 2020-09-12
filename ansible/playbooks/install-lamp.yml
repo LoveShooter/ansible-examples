@@ -1,0 +1,14 @@
+---
+- name: Lamp install
+  hosts: lampservers
+  become: yes
+
+  tasks:
+  - name: Intalling LAMP on multiple nodes
+    apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+    loop: [ 'aptitude' ]
+
+  #Apache, maria-mysql, php install
+  - name: 
+    apt: name={{ item }} update_cache=yes state=latest
+    loop: [ 'apache2', 'mariadb', 'php', 'php-mysql']
