@@ -1,4 +1,4 @@
-LAMP and configure on Ubuntu 18.04
+<b>LAMP and configure on Ubuntu 18.04</b>
 
 This playbook will install the Apache 2 web server on an Ubuntu 18.04 machine, as explained in the guide on How to Use Ansible to Install and Configure Apache on Ubuntu 18.04. A virtualhost will be created with the options specified in the vars/default.yml variable file.
 Settings
