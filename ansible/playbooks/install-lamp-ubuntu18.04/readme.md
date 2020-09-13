@@ -1,21 +1,25 @@
-LAMP and configure on Ubuntu 18.04
+# LAMP and configure on Ubuntu 18.04
 
-This playbook will install the Apache 2 web server on an Ubuntu 18.04 machine, as explained in the guide on How to Use Ansible to Install and Configure Apache on Ubuntu 18.04. A virtualhost will be created with the options specified in the vars/default.yml variable file.
-Settings
+This playbook will install the Apache 2 web server on an Ubuntu 18.04 machine, as explained in the guide on How to Use Ansible to Install and Configure Apache on Ubuntu 18.04. A virtualhost will be created with the options specified in the `vars/default.yml` variable file.
 
-    app_user: a remote non-root user on the Ansible host that will own the application files.
-    http_host: your domain name.
-    http_conf: the name of the configuration file that will be created within Apache.
-    http_port: HTTP port, default is 8080.
-    disable_default: whether or not to disable the default Apache website. When set to true, your new virtualhost should be used as default website. Default is true.
+## Settings
 
-Running this Playbook
+- `app_user`: a remote non-root user on the Ansible host that will own the application files.
+-  `http_host`: your domain name.
+-  `http_conf`: the name of the configuration file that will be created within Apache.
+-  `http_port`: HTTP port, default is 8080.
+-  `disable_default`: whether or not to disable the default Apache website. When set to true, your new virtualhost should be used as default website. Default is true.
 
-Quick Steps:
-1. Customize Options
+## Running this Playbook
 
+ Quick Steps:
+### 1. Customize Options
+
+```shell
 nano vars/default.yml
+```
 
+```yml
 #vars/default.yml
 ---
 app_user: "maxxx"
@@ -23,9 +27,10 @@ http_host: "your_domain"
 http_conf: "your_domain.conf"
 http_port: "8080"
 disable_default: true
+```
 
-2. Run the Playbook
+### 2. Run the Playbook
 
+```command
 ansible-playbook -l [target] -i [inventory file] -u [remote user] playbook.yml
-
-For more information on how to run this Ansible setup, please check this guide: How to Use Ansible to Install and Configure Apache on Ubuntu 18.04.
+```
