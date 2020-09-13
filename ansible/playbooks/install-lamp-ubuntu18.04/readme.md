@@ -1,4 +1,4 @@
-#LAMP and configure on Ubuntu 18.04
+# LAMP and configure on Ubuntu 18.04
 
 This playbook will install the Apache 2 web server on an Ubuntu 18.04 machine, as explained in the guide on How to Use Ansible to Install and Configure Apache on Ubuntu 18.04. A virtualhost will be created with the options specified in the vars/default.yml variable file.
 Settings
@@ -9,10 +9,10 @@ Settings
     http_port: HTTP port, default is 8080.
     disable_default: whether or not to disable the default Apache website. When set to true, your new virtualhost should be used as default website. Default is true.
 
-##Running this Playbook
+## Running this Playbook
 
-###Quick Steps:
-1. Customize Options
+ Quick Steps:
+### 1. Customize Options
 
 nano vars/default.yml
 
@@ -24,7 +24,7 @@ http_conf: "your_domain.conf"
 http_port: "8080"
 disable_default: true
 
-###2. Run the Playbook
+### 2. Run the Playbook
 
 ansible-playbook -l [target] -i [inventory file] -u [remote user] playbook.yml
 
