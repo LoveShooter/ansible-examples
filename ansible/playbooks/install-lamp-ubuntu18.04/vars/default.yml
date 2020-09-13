@@ -1,0 +1,7 @@
+---
+mysql_root_password: "Ff121212"
+app_user: "maxxx"
+http_host: "testdomain"
+http_conf: "testdomain.conf"
+http_port: "8080"
+disable_default: true
