@@ -13,7 +13,7 @@
   #Apache, maria-mysql, php install
   - name: Intalling LAMP on multiple nodes
     apt: name={{ item }} update_cache=yes state=latest
-    loop: [ 'apache2', 'mariadb-server', 'php', 'php-mysql', 'libapache2-mod-php']
+    loop: [ 'apache2', 'mariadb-server', 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php']
 
   - name: Create document root
     file:
@@ -24,7 +24,7 @@
 
   - name: Setup Apache Virtualhost
     template:
-      src: "files/apache.conf.j2"
+      src: "files/apache2.conf.j2"
       dest: "/etc/apache2/sites-available/{{ http_conf }}"
     notify: Reload Apache
 
