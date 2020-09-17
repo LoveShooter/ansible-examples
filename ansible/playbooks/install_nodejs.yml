@@ -2,7 +2,8 @@
 - hosts: all
   become: yes
   vars:
-    NODEJS_VERSION: "14"
+    NODEJS_VERSION: "node_14.x"
+    ansible_distribution_release: "focal"
 
   tasks:
     - name: Install gpg key for NodeJS repo
@@ -12,11 +13,11 @@
 
     - name: Add NodeJS repo
       apt_repository:
-        repo: "deb https://deb.nodesource.com/setup_{{ NODEJS_VERSION }}.x"
+        repo: "deb https://deb.nodesource.com/{{ NODEJS_VERSION }} {{ ansible_distribution_release }} main"
         state: present
-        update_cache: yes
 
-    - name: Install the node.js
+    - name: Install the NodeJS
       apt:
+        update_cache: yes
         name: nodejs
         state: present
