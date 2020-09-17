@@ -3,7 +3,7 @@
   become: yes
   vars:
     NODEJS_VERSION: "node_14.x"
-    ansible_distribution_release: "focal"
+    distribution_release: "focal"
 
   tasks:
     - name: Install gpg key for NodeJS repo
@@ -13,7 +13,7 @@
 
     - name: Add NodeJS repo
       apt_repository:
-        repo: "deb https://deb.nodesource.com/{{ NODEJS_VERSION }} {{ ansible_distribution_release }} main"
+        repo: "deb https://deb.nodesource.com/{{ NODEJS_VERSION }} {{ distribution_release }} main"
         state: present
 
     - name: Install the NodeJS
