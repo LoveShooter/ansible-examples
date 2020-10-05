@@ -1,0 +1,8 @@
+---
+- name: Docker Iptables rules RENEW
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: Execute shell script iptables_bridges.sh
+    command: sh //pt/iptables/iptables_bridges.sh
