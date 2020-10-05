@@ -5,4 +5,4 @@
   
   tasks:
   - name: Execute shell script iptables_bridges.sh
-    command: sh //pt/iptables/iptables_bridges.sh
+    command: sh /opt/iptables/iptables_bridges.sh
