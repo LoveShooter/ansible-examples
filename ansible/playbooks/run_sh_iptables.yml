@@ -2,7 +2,13 @@
 - name: Docker Iptables rules RENEW
   hosts: all
   become: yes
-  
+
   tasks:
+  - name: Copy file and change permissions
+    template:
+      src: "/etc/ansible/playbooks/iptables/iptables_bridges.sh"
+      dest: "/opt/iptables/iptables_bridges.sh"
+      mode: a+x
+
   - name: Execute shell script iptables_bridges.sh
     command: sh /opt/iptables/iptables_bridges.sh
